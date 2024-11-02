@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Name: 
+    217-contains-duplicates
+
+Version:
+	0.0.1
+
+Summary:
+    My solution along with a more optimal solution to the problem from leetcode
+    
+Solution Stats:
+    Time spent: 8 minutes 27 seconds
+    Runtime: 13ms, beats 33.38%
+    Memory: 30.7MB, beats 84.10%
+    Big-O: O(n)
+
+Author:
+    Luke Marren
+
+License: 
+    MIT
+
+Requires:
+    typing
+
+Date Last Modified:
+	November 1, 2024
+"""
+
+from typing import List
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        """
+        Return true if any value appears at least twice in the given array, and false if every element is distinct.
+
+        Args:
+            nums (List[int]): a given array of potentially distinct ints whose length > 1.
+
+        Returns:
+            bool: True for duplicates, false for all distinct values.
+        """
+        # Use a set to sort out duplicates.
+        my_set = set() 
+
+        # Loop through the array (O(n)).
+        for i in range(len(nums)):
+
+            # Add to the set - duplicates won't be added twice.
+            my_set.add(nums[i]) 
+            
+            # If set length differs from array length after adding the number, then there's a duplicate
+            if len(my_set) < i + 1:
+                return True
+        return False
+    
