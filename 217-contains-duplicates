@@ -17,6 +17,9 @@ Solution Stats:
     Memory: 30.7MB, beats 84.10%
     Big-O: O(n)
 
+Problem Pattern(s):
+    Arrays
+
 Author:
     Luke Marren
 
@@ -52,7 +55,7 @@ class Solution:
             # Add to the set - duplicates won't be added twice.
             my_set.add(nums[i]) 
             
-            # If set length differs from array length after adding the number, then there's a duplicate
+            # If set length differs from array length after adding the number, then there's a duplicate.
             if len(my_set) < i + 1:
                 return True
         return False
